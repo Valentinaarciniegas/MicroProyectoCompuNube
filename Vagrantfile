@@ -39,13 +39,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                           env: {'CONSUL_DEMO_VERSION' => CONSUL_DEMO_VERSION}
 
   config.vm.define "nodo_uno" do |nodo_uno|
-      n1.vm.hostname = "nodo_uno"
-      n1.vm.network "private_network", ip: "172.20.20.10"
+      nodo_uno.vm.hostname = "nodo_uno"
+      nodo_uno.vm.network "private_network", ip: "172.20.20.10"
   end
 
   config.vm.define "nodo_dos" do |nodo_dos|
-      n2.vm.hostname = "nodo_dos"
-      n2.vm.network "private_network", ip: "172.20.20.11"
+      nodo_dos.vm.hostname = "nodo_dos"
+      nodo_dos.vm.network "private_network", ip: "172.20.20.11"
   end
 end
 
