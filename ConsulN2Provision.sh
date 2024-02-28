@@ -22,3 +22,17 @@ cp /vagrant_data/web2.js ~/app/web2.js
 
 # Ejecución de la aplicación web 2 
 pm2 start /vagrant_data/web2.js --name "web2"
+
+# Update package list and install dependencies
+sudo apt-get update
+sudo apt-get install -y unzip curl jq
+
+# Download and install Consul
+CONSUL_VERSION="1.11.0"
+wget "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip"
+unzip "consul_${CONSUL_VERSION}_linux_amd64.zip"
+sudo mv consul /usr/local/bin/
+
+# Clean up downloaded zip file
+rm "consul_${CONSUL_VERSION}_linux_amd64.zip"
+

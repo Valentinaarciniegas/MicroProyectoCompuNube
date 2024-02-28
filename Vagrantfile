@@ -29,6 +29,7 @@ config.vm.define "haproxy" do |haproxy|
     haproxy.vm.box = "bento/ubuntu-22.04"
     haproxy.vm.network "private_network", ip: "192.168.33.12"
     haproxy.vm.hostname = "haproxy"
+    haproxy.vm.provision "shell", path: "HaproxyProvision.sh"
     haproxy.vm.synced_folder "C:/Users/Acer/Documents/especializacion/Computacion en la nube/Proyecto", "/vagrant_data"
  end
 end
